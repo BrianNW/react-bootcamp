@@ -3,13 +3,41 @@
 <head>
   <title> React App  </title>
   <link rel="stylesheet" type="text/css" href="" >
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 
 </head>
   
   <body>
 
+	<div id="app"> </div>
 
+	<script>
+		const name = 'Brian';
+		const handle = '@briannw';
+	
+		function NameComponent (props) {
+			return <h1> {props.name} </h1>
+			
+		}
+		
+		function HandleComponent (props) {
+			return <h3> {props.handle} </h3>
+		}
+		
+		function App() {
+			return (
+				<div id='container'>
+					<NameComponent name='Brian' />
+					<HandleComponent handle='@briannw' />
+				</div>
+			)
+		}
 
-
+		ReactDOM.render(
+			<App />,
+			document.getElementById('App')
+		)
+	</script>
   </body>
 </html>
