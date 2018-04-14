@@ -6,13 +6,16 @@
   <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 
+  <!-- Use to compile html elements inside js scripts -->
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"> </script> 	
+  
 </head>
   
   <body>
 
 	<div id="app"> </div>
 
-	<script>
+	<script type='text/babel'>
 		const name = 'Brian';
 		const handle = '@briannw';
 	
@@ -28,15 +31,16 @@
 		function App() {
 			return (
 				<div id='container'>
-					<NameComponent name='Brian' />
-					<HandleComponent handle='@briannw' />
+					<!-- name prop to pass to function property attribute props.name -->
+					<NameComponent name={name} />
+					<HandleComponent handle={handle} />
 				</div>
 			)
 		}
 
 		ReactDOM.render(
 			<App />,
-			document.getElementById('App')
+			document.getElementById('app')
 		)
 	</script>
   </body>
